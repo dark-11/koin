@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.unlimint'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.unlimint"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField 'String','BASE_URL', "\"https://geek-jokes.sameerkumar.website/\""
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha03'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Added Dependencies
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'androidx.activity:activity-ktx:1.1.0'
+    //koin
+    implementation 'io.insert-koin:koin-androidx-scope:2.2.3'
+// Koin AndroidX ViewModel features
+    implementation 'io.insert-koin:koin-androidx-viewmodel:2.2.3'
+// Koin AndroidX Fragment features
+    implementation 'io.insert-koin:koin-androidx-fragment:2.2.3'
+
+
+    // Networking
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+
+    //Coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6'
+
+    implementation 'io.reactivex.rxjava3:rxjava:2.5.0'
+
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+

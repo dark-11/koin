@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://dl.bintray.com/ekito/koin'}
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+ext {
+    set("koin_version","2.2.3")
+}
+
+    }
+}
+rootProject.name = "Unlimint"
+include ':app'
