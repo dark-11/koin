@@ -13,7 +13,7 @@ class MainViewModel (private val repository: JokeRepository, private val network
 
     private var _joke = MutableLiveData<Resource<String>>()
     val joke: LiveData<Resource<String>> = _joke
-    private val job = startRepeatingJoke(5)
+    private val job = startRepeatingJoke(60)
 
     init {
         if (networkHelper.isNetworkConnected()) {
@@ -30,7 +30,7 @@ class MainViewModel (private val repository: JokeRepository, private val network
         }
     }
 
-    fun startJob() = startRepeatingJoke(5)
+    fun startJob() = startRepeatingJoke(60)
     fun stopJob() = job.cancel()
 
     fun jokes() {
