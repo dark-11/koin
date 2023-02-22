@@ -3,12 +3,14 @@ package com.example.unlimint.adapter
 
 import com.example.unlimint.utils.FixedQeue
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unlimint.viewholder.JokeViewHolder
 
 class MainAdapter(
     private val jokes: FixedQeue<String>
-) : RecyclerView.Adapter<JokeViewHolder>() {
+) : ListAdapter<String,JokeViewHolder>(JokeDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = JokeViewHolder.inflate(parent)
 
@@ -16,4 +18,11 @@ class MainAdapter(
         return jokes.size
     }
     override fun onBindViewHolder(holder: JokeViewHolder, position: Int) =  holder.bind(jokes[position])
+
+    companion object {
+        private object JokeDiff : DiffUtil.ItemCallback<String>() {
+            override fun areItemsTheSame(oldItem: String, newItem: String) = false
+            override fun areContentsTheSame(oldItem: String, newItem: String) = false
+        }
+    }
 }

@@ -4,4 +4,5 @@
     <dimen name="size10">10dp</dimen>
     <dimen name="size0">0dp</dimen>
     <dimen name="size5">5dp</dimen>
+    <dimen name="size18">18dp</dimen>
 </resources>

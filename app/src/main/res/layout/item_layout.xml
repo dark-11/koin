@@ -12,7 +12,7 @@
         android:layout_width="@dimen/size0"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/size5"
-        android:padding="@dimen/size10"
+        android:padding="@dimen/size5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
