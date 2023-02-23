@@ -25,6 +25,7 @@ class FirstFragment : Fragment() {
         setHasOptionsMenu(false)
         binding.etPhone.doAfterTextChanged {
             if (it?.length == 10) {
+                binding.btLogin.isEnabled = true
                 val inputMethodManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 if (inputMethodManager.isAcceptingText)
                     inputMethodManager.hideSoftInputFromWindow(requireActivity().currentFocus?.windowToken, /*flags:*/0)
